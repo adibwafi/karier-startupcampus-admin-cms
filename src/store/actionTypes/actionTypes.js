@@ -1,0 +1,11 @@
+export const SET_FOOD = "food/setFood";
+export const SET_FOOD_DETAIL = "food/setFoodDetail";
+export const SET_FOOD_FILTER = "food/setFoodFilter";
+export const SET_RESTAURANT = "restaurant/setRestaurant";
+export const SET_CATEGORY = "category/setCategory";
+export const SET_ORDER = "order/setOrder";
+export const FETCH_JOB = "job/fetchJobs";
+export const FETCH_ONE_JOB = "job/fetchOneJob";
+export const FETCH_APPLICATION = "application/fetchApplication";
+export const BASE_URL = "https://web-production-d61a.up.railway.app";
+// export const BASE_URL = "http://localhost:3000";
