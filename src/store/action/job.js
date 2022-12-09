@@ -71,7 +71,7 @@ export function addJob(job) {
 
 export function deleteJob(id) {
   return async (dispatch) => {
-    console.log(id)
+    // console.log(id)
     try {
       let response = await fetch(BASE_URL + `/jobs/${id}`, {
         method: "DELETE",
@@ -115,6 +115,27 @@ export function updateActiveJob(id, is_active) {
   return async (dispatch) => {
     try {
       let response = await fetch(BASE_URL + `/jobs/${id}`, {
+        method: "PATCH",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ is_active }),
+      });
+      if (!response.ok) {
+        throw response.message;
+      }
+      dispatch(fetchJobs());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function updateCloseJob(id, is_active) {
+  return async (dispatch) => {
+    try {
+      let response = await fetch(BASE_URL + `/jobs/${id}/false`, {
         method: "PATCH",
         headers: {
           access_token: localStorage.getItem("access_token"),

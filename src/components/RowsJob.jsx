@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-deleteJob, jobDetailById, updateActiveJob
+deleteJob, jobDetailById, updateActiveJob, updateCloseJob
 } from "../store/action/job";
 import ToggleSwitch from "./ToggleSwitch";
 import { useDispatch } from "react-redux";
@@ -42,7 +42,7 @@ export default function RowsJob(props) {
   };
 
   const handleClickUpdateActive = (status) => {
-    dispatch(updateActiveJob(_id, status));
+      dispatch(updateActiveJob(_id, status));
   };
 
 
